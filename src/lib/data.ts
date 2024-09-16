@@ -10,8 +10,8 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    name: "Portfolio",
+    hash: "#portfolio",
   },
   {
     name: "Dispatch",
@@ -23,26 +23,26 @@ export const links = [
   },
 ] as const;
 
-export const projectsData = [
+export const portfolioData = [
   {
     title: "Durb",
     description:
-      "Durb durb durb",
+      "This real-time strategy game, inspired by Risk, features a randomly generated map. Players compete for territory using energy, which grows in nodes and transfers along edges. Strategic abilities and unique mechanics, like structures and dynamic edges, add depth.",
     tags: ["Web", "Competitive", "Strategy", "Risk", "Clash Royale"],
-    // imageUrl: corpcommentImg,
+    imageUrl: "/durb.png",
   },
   {
     title: "Ghosts Don't Sleep",
     description:
-      "Ghosts dont sleep",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    // imageUrl: rmtdevImg,
+      "Ghosts Don't Sleep is a multiplayer game where hunters fight an invisible ghost. The ghost grabs hunters, and hunters use flashlights to defeat the ghost and revive teammates. Unique abilities and resource management add depth to the gameplay.",
+    tags: ["Stealth", "Team Strategy", "Fun and Challenging", "Online"],
+    imageUrl: "/ghostsdontsleep.png",
   },
   {
-    title: "Word Analytics",
+    title: "Track Zero",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    // imageUrl: wordanalyticsImg,
+      "Track Zero is a thrilling 2D web racing game with challenging tracks, intuitive controls, and vibrant graphics. Race against time, collect power-ups, and unlock new levels as you master precision and speed. Are you ready to reach Track Zero?",
+    tags: ["Web", "Racing", "Arcade", "Online", "Precision Gaming", "Fun and Addictive"],
+    imageUrl: "/trackzero.png",
   },
 ] as const;
