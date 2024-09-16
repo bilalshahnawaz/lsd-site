@@ -30,6 +30,7 @@ export const portfolioData = [
       "This real-time strategy game, inspired by Risk, features a randomly generated map. Players compete for territory using energy, which grows in nodes and transfers along edges. Strategic abilities and unique mechanics, like structures and dynamic edges, add depth.",
     tags: ["Web", "Competitive", "Strategy", "Risk", "Clash Royale"],
     imageUrl: "/durb.png",
+    playUrl: "https://www.durb.ca/"
   },
   {
     title: "Ghosts Don't Sleep",

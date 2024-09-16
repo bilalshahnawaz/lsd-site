@@ -55,9 +55,8 @@ function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl 
             </motion.a>
             <motion.a
               href={playUrl}
+              target="_blank"
               className="group bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500 hover:from-indigo-500 hover:via-indigo-500 hover:to-purple-500 px-7 py-3 flex items-center gap-2 rounded-full shadow outline-none hover:scale-110 active:scale-95 transition-all ease-in-out text-white"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               Play 
               <motion.div>
