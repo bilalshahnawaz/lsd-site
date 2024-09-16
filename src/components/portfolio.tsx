@@ -44,9 +44,7 @@ function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl 
           <motion.div className="mt-4 flex gap-4 justify-center">
             <motion.a
               href={discoverMoreUrl}
-              className="group bg-gray-900 text-white px-4 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-100 transition-all ease-in-out"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="group bg-gray-900 text-white px-4 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-95 transition-all ease-in-out cursor-pointer"
             >
               Discover More 
               <motion.div>
