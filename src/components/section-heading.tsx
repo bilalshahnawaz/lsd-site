@@ -2,11 +2,12 @@ import React from "react"
 
 type SectionHeadingProps = {
     children: React.ReactNode;
+    className?: string;
 }
 
 export default function SectionHeading({
-    children }: SectionHeadingProps) {
+    children, className = '' }: SectionHeadingProps) {
     return (
-        <h2 className="text-3xl font-medium capitalize mb-8">{children}</h2>
+        <h2 className={`text-3xl font-medium capitalize mb-8 ${className}`}>{children}</h2>
     )
 }

@@ -3,6 +3,7 @@ import SectionDivider from "@/components/section-divider";
 import About from "@/components/about";
 import Image from "next/image";
 import Portfolio from "@/components/portfolio";
+import Dispatch from "@/components/dispatch";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
       <About />
       <SectionDivider />
       <Portfolio />
+      <SectionDivider />
+      <Dispatch />
     </main>
   );
 }
