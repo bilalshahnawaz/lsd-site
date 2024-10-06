@@ -8,6 +8,7 @@ import { getAllPosts } from '@/lib/posts';
 import { useState, useEffect } from 'react';
 import SectionHeading from '@/components/section-heading';
 import Header from '@/components/header';
+import Head from 'next/head';
 
 // Define the type for a post
 interface Post {
@@ -44,6 +45,9 @@ const Blog = ({ posts }: BlogProps) => {
 
   return (
     <main className="flex flex-col items-center px-4 py-24">
+      <Head>
+        <title>Lavine Software Dispatch</title>
+      </Head>
       <Header />
       <SectionHeading className="mt-4">Dispatch</SectionHeading> {/* Adjusted padding-top */}
       <input
