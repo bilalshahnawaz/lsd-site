@@ -30,7 +30,7 @@ type ProjectProps = {
     tags: string[];
     imageUrl: string;
     playUrl?: string; // Make playUrl optional
-    discoverMoreUrl: string;
+    discoverMoreUrl?: string; // Make discoverMoreUrl optional
 };
 
 function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl }: ProjectProps) {
@@ -49,15 +49,17 @@ function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl 
             </div>
           </div>
           <motion.div className="mt-4 flex gap-4 justify-center">
-            <motion.a
-              href={discoverMoreUrl}
-              className="group bg-gray-900 text-white px-4 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-95 transition-all ease-in-out cursor-pointer"
-            >
-              Discover More 
-              <motion.div>
-                <RiCompass3Fill className="opacity-70 group-hover:translate-x-1 text-[1.2rem] transition" /> 
-              </motion.div>
-            </motion.a>
+            {discoverMoreUrl && (
+              <motion.a
+                href={discoverMoreUrl}
+                className="group bg-gray-900 text-white px-4 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-95 transition-all ease-in-out cursor-pointer"
+              >
+                Discover More 
+                <motion.div>
+                  <RiCompass3Fill className="opacity-70 group-hover:translate-x-1 text-[1.2rem] transition" /> 
+                </motion.div>
+              </motion.a>
+            )}
             {playUrl && (
               <motion.a
                 href={playUrl}
