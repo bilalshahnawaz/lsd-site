@@ -59,6 +59,8 @@ const Contact = () => {
               rows={4}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              placeholder="This feature is in progress"
+              disabled={true}
               required
             ></textarea>
           </div>
@@ -68,6 +70,7 @@ const Contact = () => {
               className="flex justify-center py-3 px-7 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gradient-to-br from-green-500 via-teal-600 to-blue-500 hover:from-teal-500 hover:via-blue-600 hover:to-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all ease-in-out mx-2 mt-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              disabled={true}
             >
               Send Message
               <motion.div className="ml-2">

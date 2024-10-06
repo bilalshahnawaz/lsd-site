@@ -90,9 +90,10 @@ const Dispatch = () => {
                 <input
                     type="email"
                     className="w-full max-w-md p-3 border rounded-lg mb-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-                    placeholder="Enter your email"
+                    placeholder="This feature is currently in development"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    disabled={true}
                 />
             </div>
             <div className="flex justify-center mt-4 text-center">
