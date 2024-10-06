@@ -6,8 +6,6 @@ excerpt: "Track Zero is a thrilling 2D web racing game with challenging tracks, 
 pinned: true
 ---
 
-# Track Zero: A Thrilling 2D Web Racing Game
-
 ## <center>Get Ready to Race</center>
 Welcome to **Track Zero**, a thrilling 2D web racing game that will test your skills and reflexes. With challenging tracks, intuitive controls, and vibrant graphics, Track Zero offers an exhilarating racing experience right in your browser.
 
