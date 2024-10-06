@@ -8,7 +8,21 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw'; // For handling raw HTML in markdown
 import rehypePrism from 'rehype-prism'; // Optional for syntax highlighting (if using code blocks)
 
-const BlogPost = ({ post }) => {
+// Define the type for a post
+interface Post {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+  pinned: boolean;
+}
+
+// Define the type for the props
+interface BlogPostProps {
+  post: Post;
+}
+
+const BlogPost = ({ post }: BlogPostProps) => {
   return (
     <section className="w-full max-w-4xl mx-auto p-4 mb-8 mt-8 sm:mt-0" id="blog-post">
       <motion.article
@@ -31,52 +45,38 @@ const BlogPost = ({ post }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          {post.date} | {post.author}
+          {post.date}
         </motion.p>
-        <motion.div
-          className="prose prose-lg max-w-none text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
+        <ReactMarkdown
+          className="prose prose-lg text-gray-300"
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, rehypePrism]}
         >
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]} // Support for GitHub-Flavored Markdown
-            rehypePlugins={[rehypeRaw, rehypePrism]} // Handling raw HTML and syntax highlighting
-          >
-            {post.content}
-          </ReactMarkdown>
-        </motion.div>
-        {post.pinned && <FaStar className="absolute top-4 right-4 text-yellow-500" />}
+          {post.content}
+        </ReactMarkdown>
       </motion.article>
-
-      <div className="flex justify-center mt-8">
-        <Link
-          href="/blog/"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-95 transition-all ease-in-out cursor-pointer"
-        >
-          Back to Dispatch
-        </Link>
-      </div>
     </section>
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getAllPosts(); // Fetch all post data
-  const paths = posts.map((post) => ({
-    params: { id: post.id }, // Create dynamic routes based on post IDs
-  }));
-
-  return { paths, fallback: false }; // Fallback is false to return 404 for undefined routes
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = getPostById(params.id as string);
+  return {
+    props: {
+      post,
+    },
+  };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params || !params.id) {
-    return { notFound: true }; // Return 404 if no params are found
-  }
-
-  const post = getPostById(params.id as string); // Fetch post data by ID
-  return { props: { post } }; // Pass post data as props
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = getAllPosts();
+  const paths = posts.map((post) => ({
+    params: { id: post.id },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export default BlogPost;
