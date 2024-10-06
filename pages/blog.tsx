@@ -45,15 +45,15 @@ const Blog = ({ posts }: BlogProps) => {
   return (
     <main className="flex flex-col items-center px-4 py-24">
       <Header />
-      <SectionHeading>Dispatch</SectionHeading>
+      <SectionHeading className="mt-8">Dispatch</SectionHeading>
       <input
         type="text"
-        className="w-full max-w-2xl p-3 border rounded-lg mb-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+        className="w-full max-w-xl p-3 border rounded-lg mb-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black mt-8"
         placeholder="Search articles..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="w-full max-w-2xl space-y-6">
+      <div className="w-full max-w-xl space-y-6 mt-8">
         {pinnedPosts.map((post) => (
           <Link key={post.id} href={`/blog/${post.id}`}>
             {isClient && (

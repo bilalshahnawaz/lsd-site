@@ -40,11 +40,43 @@ const config: Config = {
               fontWeight: '500',
               fontSize: theme('fontSize.xl'),
             },
+            p: {
+              color: theme('colors.foreground'),
+              marginTop: theme('spacing.4'),
+              marginBottom: theme('spacing.4'),
+            },
+            a: {
+              color: theme('colors.blue.500'),
+              textDecoration: 'underline',
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+            },
+            blockquote: {
+              color: theme('colors.foreground'),
+              borderLeftColor: theme('colors.blue.500'),
+              fontStyle: 'italic',
+            },
+            code: {
+              color: theme('colors.pink.500'),
+              backgroundColor: theme('colors.gray.800'),
+              padding: theme('spacing.1'),
+              borderRadius: theme('borderRadius.md'),
+            },
+            pre: {
+              color: theme('colors.foreground'),
+              backgroundColor: theme('colors.gray.800'),
+              padding: theme('spacing.4'),
+              borderRadius: theme('borderRadius.md'),
+            },
           },
         },
       }),
     },
   },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 
 export default config;

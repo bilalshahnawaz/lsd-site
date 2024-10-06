@@ -6,8 +6,6 @@ excerpt: "Ghosts Don't Sleep is a multiplayer game where hunters fight an invisi
 pinned: true
 ---
 
-# Ghosts Don't Sleep: A Thrilling Multiplayer Experience
-
 ## <center>Unleash the Hunter Within</center>
 Welcome to the eerie world of **Ghosts Don't Sleep**, a heart-pounding multiplayer game where hunters face off against an invisible ghost. This game offers a unique blend of suspense and strategy, ensuring an unforgettable gaming experience.
 
