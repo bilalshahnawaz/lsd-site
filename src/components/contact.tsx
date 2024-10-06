@@ -39,6 +39,8 @@ const Contact = () => {
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              disabled={true}
               required
             />
           </div>
@@ -49,6 +51,8 @@ const Contact = () => {
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              disabled={true}
               required
             />
           </div>
