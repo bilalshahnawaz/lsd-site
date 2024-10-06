@@ -1,7 +1,6 @@
 import Intro from "@/components/intro";
 import SectionDivider from "@/components/section-divider";
 import About from "@/components/about";
-import Image from "next/image";
 import Portfolio from "@/components/portfolio";
 import Dispatch from "@/components/dispatch";
 import Contact from "@/components/contact";

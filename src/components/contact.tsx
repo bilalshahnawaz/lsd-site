@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { FaPaperPlane } from "react-icons/fa";
 import SectionHeading from "./section-heading";
-import Link from "next/link";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -15,7 +14,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("/api/contact", { name, email, message })
-      .then((response) => {
+      .then(() => {
         alert("Message sent successfully!");
       })
       .catch((error) => {

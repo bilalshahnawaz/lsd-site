@@ -1,11 +1,10 @@
 "use client";
-
-import React, { useRef } from "react"
 import SectionHeading from "./section-heading"
 import { portfolioData } from "@/lib/data"
 import { motion } from "framer-motion";
 import { RiCompass3Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
+import React from "react";
 
 export default function Portfolio() {
 
