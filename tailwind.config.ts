@@ -1,6 +1,9 @@
 import { Config } from 'tailwindcss';
 
 const config: Config = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}', // Add paths to your template files
+  ],
   theme: {
     extend: {
       colors: {
