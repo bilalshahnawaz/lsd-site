@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="./public/lsd-white.png" alt="LSD Logo" />
+  <img src="./public/lsd-white.png" alt="LSD Logo" /> <br>
+  <a href="https://lavine-software.vercel.app/">lavine-software.vercel.app</a>
 </p>
 
 # LSD Website
