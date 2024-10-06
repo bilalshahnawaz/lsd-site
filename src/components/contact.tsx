@@ -23,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto p-4 mb-14 mt-8 sm:mt-0" id="contact">
+    <section className="w-full max-w-4xl mx-auto p-4 mb-72 mt-8 sm:mt-0" id="contact">
       <SectionHeading className="text-center mb-20">Contact Us</SectionHeading>
       <motion.div
         className="bg-slate-700 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto"

@@ -2,7 +2,10 @@ import { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}', // Add paths to your template files
+    './src/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

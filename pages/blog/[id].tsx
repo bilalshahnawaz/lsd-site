@@ -23,9 +23,9 @@ interface BlogPostProps {
 
 const BlogPost = ({ post }: BlogPostProps) => {
   return (
-    <section className="w-full max-w-4xl mx-auto p-4 mb-8 mt-8 sm:mt-0" id="blog-post">
+    <section className="w-full max-w-4xl mx-auto p-4 mb-8 mt-6 sm:mt-6" id="blog-post">
       <motion.article
-        className="relative p-6 border rounded-lg shadow-md bg-gray-800 mt-8"
+        className="relative p-6 border rounded-lg shadow-md bg-gray-800 mt-24"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -44,18 +44,10 @@ const BlogPost = ({ post }: BlogPostProps) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          {post.date}
-        </motion.p>
-        <motion.p
-          className="text-gray-400 text-center mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          By {post.author}
+          {post.date} | {post.author}
         </motion.p>
         <ReactMarkdown
-          className="prose prose-lg prose-invert text-gray-300"
+          className="prose prose-lg prose-invert text-gray-100 mx-auto"
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypePrism]}
         >

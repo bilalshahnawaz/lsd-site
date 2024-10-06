@@ -45,20 +45,20 @@ const Blog = ({ posts }: BlogProps) => {
   return (
     <main className="flex flex-col items-center px-4 py-24">
       <Header />
-      <SectionHeading className="mt-8">Dispatch</SectionHeading>
+      <SectionHeading className="mt-4">Dispatch</SectionHeading> {/* Adjusted padding-top */}
       <input
         type="text"
-        className="w-full max-w-xl p-3 border rounded-lg mb-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black mt-8"
+        className="w-full max-w-2xl p-3 border rounded-lg mb-6 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
         placeholder="Search articles..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="w-full max-w-xl space-y-6 mt-8">
+      <div className="w-full max-w-2xl space-y-6 mt-4">
         {pinnedPosts.map((post) => (
           <Link key={post.id} href={`/blog/${post.id}`}>
             {isClient && (
               <motion.div
-                className="relative p-6 border rounded-lg shadow-md transform transition-all ease-in-out duration-300 hover:bg-slate-800 cursor-pointer mb-4"
+                className="relative p-6 border rounded-lg shadow-md transition-transform duration-300 hover:bg-slate-800 cursor-pointer mb-4"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.01 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const Blog = ({ posts }: BlogProps) => {
           <Link key={post.id} href={`/blog/${post.id}`}>
             {isClient && (
               <motion.div
-                className="relative p-6 border rounded-lg shadow-md transform transition-all ease-in-out duration-300 hover:bg-slate-800 cursor-pointer mb-4"
+                className="relative p-6 border rounded-lg shadow-md transition-transform duration-300 hover:bg-slate-800 cursor-pointer mb-4"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.01 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -100,6 +100,7 @@ const Blog = ({ posts }: BlogProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts();
+
   return {
     props: {
       posts,
