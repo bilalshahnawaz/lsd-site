@@ -27,7 +27,7 @@ export default function Portfolio() {
 type ProjectProps = {
     title: string;
     description: string;
-    tags: string[];
+    tags: readonly string[]; // Make tags a readonly array
     imageUrl: string;
     playUrl?: string; // Make playUrl optional
     discoverMoreUrl?: string; // Make discoverMoreUrl optional
