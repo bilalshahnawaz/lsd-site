@@ -24,7 +24,14 @@ export default function Portfolio() {
     )
 }
 
-type ProjectProps = typeof portfolioData[0];
+type ProjectProps = {
+    title: string;
+    description: string;
+    tags: string[];
+    imageUrl: string;
+    playUrl?: string; // Make playUrl optional
+    discoverMoreUrl: string;
+};
 
 function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl }: ProjectProps) {
     return (
@@ -51,16 +58,18 @@ function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl 
                 <RiCompass3Fill className="opacity-70 group-hover:translate-x-1 text-[1.2rem] transition" /> 
               </motion.div>
             </motion.a>
-            <motion.a
-              href={playUrl}
-              target="_blank"
-              className="group bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500 hover:from-indigo-500 hover:via-indigo-500 hover:to-purple-500 px-7 py-3 flex items-center gap-2 rounded-full shadow outline-none hover:scale-110 active:scale-95 transition-all ease-in-out text-white"
-            >
-              Play 
-              <motion.div>
-                <FaPlay className="opacity-70 text-[1.35rem] group-hover:translate-x-1 transition" />
-              </motion.div>
-            </motion.a>
+            {playUrl && (
+              <motion.a
+                href={playUrl}
+                target="_blank"
+                className="group bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500 hover:from-indigo-500 hover:via-indigo-500 hover:to-purple-500 px-7 py-3 flex items-center gap-2 rounded-full shadow outline-none hover:scale-110 active:scale-95 transition-all ease-in-out text-white"
+              >
+                Play 
+                <motion.div>
+                  <FaPlay className="opacity-70 text-[1.35rem] group-hover:translate-x-1 transition" />
+                </motion.div>
+              </motion.a>
+            )}
           </motion.div>
         </div>
         <div className="sm:w-1/2 flex items-center justify-center p-4 sm:p-8"> 
@@ -72,4 +81,4 @@ function Project({ title, description, tags, imageUrl, playUrl, discoverMoreUrl 
         </div>
       </div>
     );
-  }
+}
