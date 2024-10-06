@@ -44,7 +44,7 @@ const Blog = ({ posts }: BlogProps) => {
   const sortedUnpinnedPosts = unpinnedPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <main className="flex flex-col items-center px-4 py-24">
+    <main className="flex flex-col items-center px-4 py-24 h-auto">
       <Head>
         <title>Lavine Software Dispatch</title>
       </Head>
@@ -70,9 +70,7 @@ const Blog = ({ posts }: BlogProps) => {
               >
                 <h2 className="text-2xl font-semibold text-white">{post.title}</h2>
                 <p className="text-slate-400 mt-2">{post.excerpt}</p>
-                <Link href={`/blog/${post.id}`}>
-                  <span className="text-blue-500 mt-4 inline-block cursor-pointer">Read More</span>
-                </Link>
+                <span className="text-blue-500 mt-4 inline-block cursor-pointer">Read More</span>
                 <FaStar className="absolute top-4 right-4 text-yellow-500" />
               </motion.div>
             )}
@@ -90,9 +88,7 @@ const Blog = ({ posts }: BlogProps) => {
               >
                 <h2 className="text-2xl font-semibold text-white">{post.title}</h2>
                 <p className="text-slate-400 mt-2">{post.excerpt}</p>
-                <Link href={`/blog/${post.id}`}>
-                  <span className="text-blue-500 mt-4 inline-block cursor-pointer">Read More</span>
-                </Link>
+                <span className="text-blue-500 mt-4 inline-block cursor-pointer">Read More</span>
               </motion.div>
             )}
           </Link>

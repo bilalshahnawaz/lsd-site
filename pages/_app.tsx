@@ -4,7 +4,7 @@ import Header from '@/components/header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="h-[5000px] bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen text-white">
+    <div className="bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen text-white">
       <Header />
       <Component {...pageProps} />
     </div>
