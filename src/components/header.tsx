@@ -6,6 +6,11 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+interface LinkType {
+  hash: string;
+  name: string;
+}
+
 const SlideTabs = () => {
   const [position, setPosition] = useState({
     left: 0,
@@ -14,7 +19,7 @@ const SlideTabs = () => {
   });
   const [activeTab, setActiveTab] = useState<string | null>(null); // Track the active tab
   const pathname = usePathname();
-  const tabRefs = useRef({}); // Track refs for each tab
+  const tabRefs = useRef<{ [key: string]: HTMLLIElement | null }>({}); // Track refs for each tab
 
   // Handle scroll events to detect the active section
   useEffect(() => {
@@ -79,7 +84,7 @@ const SlideTabs = () => {
     // Do nothing on mouse leave, the position will stay on the active tab
   };
 
-  const handleTabClick = (link, ref) => {
+  const handleTabClick = (link: LinkType, ref: React.RefObject<HTMLLIElement>) => {
     setActiveTab(link.hash); // Set active tab
     if (ref?.current) {
       const { offsetLeft, offsetWidth } = ref.current;
@@ -116,7 +121,7 @@ const SlideTabs = () => {
 
   useEffect(() => {
     if (activeTab && tabRefs.current[activeTab]) {
-      const { offsetLeft, offsetWidth } = tabRefs.current[activeTab];
+      const { offsetLeft, offsetWidth } = tabRefs.current[activeTab]!;
       setPosition({
         left: offsetLeft,
         width: offsetWidth,
@@ -147,8 +152,14 @@ const SlideTabs = () => {
   );
 };
 
-const Tab = ({ link, setPosition, activeTab, handleTabClick, tabRefs }) => {
-  const ref = useRef(null);
+const Tab = ({ link, setPosition, activeTab, handleTabClick, tabRefs }: {
+  link: LinkType;
+  setPosition: React.Dispatch<React.SetStateAction<{ left: number; width: number; opacity: number }>>;
+  activeTab: string | null;
+  handleTabClick: (link: LinkType, ref: React.RefObject<HTMLLIElement>) => void;
+  tabRefs: React.MutableRefObject<{ [key: string]: HTMLLIElement | null }>;
+}) => {
+  const ref = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     // On page load or hash change, set the highlight to the active tab
@@ -198,7 +209,7 @@ const Tab = ({ link, setPosition, activeTab, handleTabClick, tabRefs }) => {
   );
 };
 
-const Cursor = ({ position }) => {
+const Cursor = ({ position }: { position: { left: number; width: number; opacity: number } }) => {
   return (
     <motion.li
       animate={{
