@@ -9,7 +9,21 @@ import { useState, useEffect } from 'react';
 import SectionHeading from '@/components/section-heading';
 import Header from '@/components/header';
 
-const Blog = ({ posts }) => {
+// Define the type for a post
+interface Post {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  pinned: boolean;
+}
+
+// Define the type for the props
+interface BlogProps {
+  posts: Post[];
+}
+
+const Blog = ({ posts }: BlogProps) => {
   const [search, setSearch] = useState("");
   const [isClient, setIsClient] = useState(false);
 
