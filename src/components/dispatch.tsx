@@ -23,11 +23,11 @@ const Dispatch = () => {
 
     const handleSubscribe = () => {
         // Handle email subscription
-        axios.post("/api/subscribe", { email }).then((response) => {
-            alert("Subscribed successfully!");
-        }).catch(error => {
-            console.error("Error subscribing:", error);
-        });
+        // axios.post("/api/subscribe", { email }).then((response) => {
+        //     alert("Subscribed successfully!");
+        // }).catch(error => {
+        //     console.error("Error subscribing:", error);
+        // });
     };
 
     const truncate = (str, maxLength) => {
