@@ -1,8 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { getAllPosts, getPostById } from '@/lib/posts'; // Make sure to implement getAllPosts and getPostById
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { FaStar } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw'; // For handling raw HTML in markdown
@@ -15,6 +13,7 @@ interface Post {
   content: string;
   date: string;
   pinned: boolean;
+  author: string; // Add the author property
 }
 
 // Define the type for the props
@@ -40,12 +39,20 @@ const BlogPost = ({ post }: BlogPostProps) => {
           {post.title}
         </motion.h1>
         <motion.p
-          className="text-gray-400 text-center mb-8"
+          className="text-gray-400 text-center mb-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           {post.date}
+        </motion.p>
+        <motion.p
+          className="text-gray-400 text-center mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          By {post.author}
         </motion.p>
         <ReactMarkdown
           className="prose prose-lg text-gray-300"
@@ -60,6 +67,12 @@ const BlogPost = ({ post }: BlogPostProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  if (!params || !params.id) {
+    return {
+      notFound: true,
+    };
+  }
+
   const post = getPostById(params.id as string);
   return {
     props: {
