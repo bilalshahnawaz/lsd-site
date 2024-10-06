@@ -8,7 +8,16 @@ import { FaEnvelope, FaEye, FaStar } from "react-icons/fa";
 import SectionHeading from "./section-heading";
 
 const Dispatch = () => {
-    const [posts, setPosts] = useState([]);
+    interface Post {
+        id: string;
+        title: string;
+        date: string;
+        author: string;
+        excerpt: string;
+        pinned?: boolean;
+    }
+    
+    const [posts, setPosts] = useState<Post[]>([]);
     const [email, setEmail] = useState("");
 
     useEffect(() => {
@@ -30,7 +39,7 @@ const Dispatch = () => {
         // });
     };
 
-    const truncate = (str, maxLength) => {
+    const truncate = (str: string, maxLength: number): string => {
         if (str.length <= maxLength) return str;
         const truncatedStr = str.slice(0, maxLength);
         const lastSpaceIndex = truncatedStr.lastIndexOf(' ');
