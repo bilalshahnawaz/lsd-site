@@ -21,6 +21,7 @@ export function getAllPosts() {
       excerpt: matterResult.data.excerpt,
       content: matterResult.content,
       pinned: matterResult.data.pinned || false, // Add pinned property
+      author: matterResult.data.author || 'Unknown', // Add author property
       fileName: fileName.replace(/\.md$/, ''), // Remove the .md extension
     };
   });
@@ -40,5 +41,6 @@ export function getPostById(id: string) {
     content: matterResult.content,
     excerpt: matterResult.data.excerpt,
     pinned: matterResult.data.pinned || false,
+    author: matterResult.data.author || 'Unknown', // Add author property
   };
 }

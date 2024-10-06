@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add these styles to your globals.css */
+body {
+  @apply bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen text-white;
+}

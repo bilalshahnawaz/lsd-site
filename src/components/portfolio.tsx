@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react"
+import React, { useRef } from "react"
 import SectionHeading from "./section-heading"
 import { portfolioData } from "@/lib/data"
 import { motion } from "framer-motion";
@@ -8,9 +8,10 @@ import { RiCompass3Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 
 export default function Portfolio() {
+
     return (
-        <section className="mt-8 sm:mt-0 flex flex-col items-center">
-            <SectionHeading>Portfolio</SectionHeading>
+        <section className="mt-8 sm:mt-0 flex flex-col items-center" id="portfolio">
+            <SectionHeading className="mb-2">Portfolio</SectionHeading>
             <div className="w-full">
             {
                 portfolioData.map((project, index) => (
