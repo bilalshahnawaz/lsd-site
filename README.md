@@ -138,12 +138,6 @@ For any inquiries or feedback, please contact:
 
 - **Name**: Bilal Shahnawaz
 - **Email**: bilal.shahnawaz@torontomu.ca
-- **GitHub**: [your-username](https://github.com/bilalshahnawaz)
+- **GitHub**: [bilalshahnawaz](https://github.com/bilalshahnawaz)
 
 Thank you for visiting our project! We hope you find it useful and inspiring.
-
----
-
----
-
-Feel free to customize this README to better fit your project's specifics and your personal or organizational branding.
